@@ -1,7 +1,6 @@
 (ns dr-dustin-tracy.views.home
   (:require
    [re-frame.core :as re-frame]
-   [cljs-time.core :as cljs-time]
    [dr-dustin-tracy.events :as events]
    [dr-dustin-tracy.posts.voting-judgement :as voting-judgement]
    [dr-dustin-tracy.components.links :as links]
