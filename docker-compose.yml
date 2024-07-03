@@ -8,8 +8,8 @@ services:
       - VERSION="1.0.0" 
     volumes:
       - /etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
-      - /var/www/certbot/:/var/www/certbot/:ro
-      - /var/www/certbot/conf/live/drdustintracy.com/:/etc/nginx/ssl/live/drdustintracy.com/:ro
+      - /etc/nginx/ssl/:/etc/nginx/ssl/:ro
+      - /var/www/certbot/conf/archive/drdustintracy.com/:/etc/nginx/ssl/live/drdustintracy.com/:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
