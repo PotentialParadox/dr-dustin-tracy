@@ -3,6 +3,7 @@
    [re-frame.core :as re-frame]
    [cljs-time.core :as cljs-time]
    [dr-dustin-tracy.events :as events]
+   [dr-dustin-tracy.posts.voting-judgement :as voting-judgement]
    [dr-dustin-tracy.components.links :as links]
    [dr-dustin-tracy.components.blog-posts :as blog-posts]))
 
@@ -15,9 +16,9 @@
      "Learn more about him!"]]])
 
 (defn blog-list []
-  [:div.grid.grid-rows-subgrid.row-span-3.max-w-md
+  [:div.grid.grid-rows-subgrid.row-span-3.max-w-2xl
    [:div.row-start-2
-    [blog-posts/list-item {:title "title", :description "description", :date (cljs-time/date-time 2024 7 7), :figure "figure"}]]])
+    [blog-posts/list-item voting-judgement/info]]])
 
 (defn home-panel []
 ;;   (let [name (re-frame/subscribe [::subs/name])]

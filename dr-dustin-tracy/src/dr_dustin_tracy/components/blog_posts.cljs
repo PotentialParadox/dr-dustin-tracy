@@ -16,4 +16,4 @@
       [:div.text-white title]
       [:div.text-white description]]
      [:div.col-span-5
-      [:img.w-96.rounded-lg {:src "images/voteman.png"}]]]))
+      [:img.w-96.rounded-lg {:src figure}]]]))
