@@ -1,21 +1,26 @@
 (ns dr-dustin-tracy.views.home
   (:require
    [re-frame.core :as re-frame]
-   [breaking-point.core :as bp]
    [dr-dustin-tracy.events :as events]
-   [dr-dustin-tracy.subs :as subs]
-   ))
+   [dr-dustin-tracy.components.links :as links]
+   [dr-dustin-tracy.components.headers :as headers]))
+
+(defn jumbotron []
+  [:div.grid.grid-rows-subgrid.row-span-3
+   [:div.row-start-2
+    [:div {:class-name (str headers/h1 "flex justify-center")} "Welcome to Dustin Tracy's personal project page!"]
+    [:div
+     [:a {:class-name (str links/a "flex justify-center") :on-click #(re-frame/dispatch [::events/navigate :about])}
+      "Learn more about him!"]]]])
+
+(defn blog-list []
+  [:div.grid.grid-rows-subgrid.row-span-3
+   [:div.row-start-2 
+    [:div {:class-name headers/h1} "Blog 1"]]])
 
 (defn home-panel []
-  (let [name (re-frame/subscribe [::subs/name])]
-    [:div
-     [:h1
-      (str "Hello from " @name ". This is the Home Page.")]
-
-     [:div
-      [:a {:on-click #(re-frame/dispatch [::events/navigate :about])}
-       "go to About Page"]]
-     [:div
-      [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
-      [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]
-     ]))
+;;   (let [name (re-frame/subscribe [::subs/name])]
+  [:div.grid.grid-cols-2.bg-black.h-screen
+   [jumbotron]
+   [blog-list]])
+    

@@ -1,4 +1,5 @@
 (ns dr-dustin-tracy.db)
 
 (def default-db
-  {:name "re-frame"})
+  {:name "Dr. Dustin Tracy"
+   :active-panel :home-panel})
