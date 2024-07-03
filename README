@@ -1,0 +1,7 @@
+## TAILWIND
+To start tailwind
+
+```
+npx tailwindcss -i ./src/tailwindseed.css -o ./resources/public/css/site.css --watch;
+```
+
