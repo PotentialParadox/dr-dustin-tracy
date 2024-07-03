@@ -1,9 +1,16 @@
-version: "0.0.3" 
 services: 
   web: 
-    container_name: "frontend" 
-    image: dt-frontend 
+    build: .
     ports: 
       - "80:80" 
+      - "443:443"
     environment: 
       - VERSION="1.0.0" 
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www/:/var/www/certbot/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
