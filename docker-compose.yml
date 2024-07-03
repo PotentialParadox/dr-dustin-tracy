@@ -9,7 +9,7 @@ services:
     volumes:
       - /etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
       - /etc/nginx/ssl/:/etc/nginx/ssl/:ro
-      - /var/www/certbot/conf/archive/drdustintracy.com/:/etc/nginx/ssl/live/drdustintracy.com/:ro
+        #- /var/www/certbot/conf/live/:/etc/nginx/ssl/live/:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
