@@ -13,6 +13,6 @@ services:
     image: certbot/certbot:latest
     volumes:
       - /var/www/certbot/:/var/www/certbot/:rw
-      - /var/www/certbot/conf/:/etc/letsencrypt/:rw
+      - /var/www/certbot/conf/:/etc/nginx/ssl/:rw
     depends_on:
       - web
