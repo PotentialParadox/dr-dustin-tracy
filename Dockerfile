@@ -36,4 +36,5 @@ COPY --from=build-stage /app/FrontEnd/dist /usr/share/nginx/html
 COPY dr-dustin-tracy/resources/public/images /usr/share/nginx/html/images
 
 EXPOSE 80
+EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
