@@ -9,10 +9,11 @@ services:
     volumes:
       - /etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
       - /var/www/certbot/:/var/www/certbot/:ro
+      - /var/www/certbot/conf/live/:/etc/nginx/ssl/live/
   certbot:
     image: certbot/certbot:latest
     volumes:
       - /var/www/certbot/:/var/www/certbot/:rw
-      - /var/www/certbot/conf/:/etc/nginx/ssl/:rw
+      - /var/www/certbot/conf/:/etc/letsencrypt/:rw
     depends_on:
       - web
