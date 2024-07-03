@@ -31,7 +31,7 @@ COPY dr-dustin-tracy/. .
 RUN shadow-cljs release app
 
 FROM nginx:1.25.2 as production
-COPY dr-dustin-tracy/nginx/default.conf /etc/nginx/conf.d/default.conf
+# COPY dr-dustin-tracy/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /app/FrontEnd/dist /usr/share/nginx/html
 COPY dr-dustin-tracy/resources/public/images /usr/share/nginx/html/images
 
