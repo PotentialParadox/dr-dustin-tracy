@@ -24,6 +24,11 @@
   {:target     :browser
    :output-dir "resources/public/js/compiled"
    :asset-path "/js/compiled"
+   :build-hooks [(shadow-cljs-hash-assets-hook/hash-assets! {:source-root "resources/public"
+                                                             :target-root "dist"
+                                                             :index "index.html"
+                                                             :files ["css/site.css" "js/compiled/app.js"]
+                                                             :release-mode-only? true})]
    :modules
    {:app {:init-fn dr-dustin-tracy.core/init}}
    :devtools
