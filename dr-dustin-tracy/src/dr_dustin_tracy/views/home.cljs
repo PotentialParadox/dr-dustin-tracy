@@ -3,6 +3,8 @@
    [re-frame.core :as re-frame]
    [dr-dustin-tracy.events :as events]
    [dr-dustin-tracy.posts.voting-judgement :as voting-judgement]
+   [dr-dustin-tracy.posts.voting-theory :as voting-theory]
+   [dr-dustin-tracy.posts.voting-first-past-the-post :as voting-first-past-the-post]
    [dr-dustin-tracy.components.links :as links]
    [dr-dustin-tracy.components.blog-posts :as blog-posts]))
 
@@ -18,8 +20,8 @@
   [:div.flex.justify-center.pt-4
   [:div.grid.grid-cols-1.max-w-4xl.gap-2
    [blog-posts/list-item voting-judgement/info]
-   [blog-posts/list-item voting-judgement/info]
-   [blog-posts/list-item voting-judgement/info]]])
+   [blog-posts/list-item voting-theory/info]
+   [blog-posts/list-item voting-first-past-the-post/info]]])
 
 (defn home-panel []
 ;;   (let [name (re-frame/subscribe [::subs/name])]
