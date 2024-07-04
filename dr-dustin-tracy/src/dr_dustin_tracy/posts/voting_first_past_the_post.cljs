@@ -1,6 +1,6 @@
 (ns dr-dustin-tracy.posts.voting-first-past-the-post
-(:require
- [cljs-time.core :as cljs-time]))
+    (:require
+    [cljs-time.core :as cljs-time]))
 
 
 (def info {:title "Voting Judgement Pt. 3"

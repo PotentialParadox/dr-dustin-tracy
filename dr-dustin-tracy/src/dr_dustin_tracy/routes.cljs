@@ -11,6 +11,7 @@
 (def routes
   (atom
     ["/" {""      :home
+          "voting_judgment" :voting-judgement
           "about" :about}]))
 
 (defn parse
