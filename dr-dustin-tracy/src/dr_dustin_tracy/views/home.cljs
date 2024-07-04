@@ -7,21 +7,23 @@
    [dr-dustin-tracy.components.blog-posts :as blog-posts]))
 
 (defn jumbotron []
-  [:div.grid
-   [:div.text-orange-500.text-7xl.flex.justify-center "Welcome!"]
-   [:div.text-white.text-3xl.flex.text-center.justify-center "This site hosts some of the personal projects of Dustin Tracy."]
+  [:div.grid.p-4
+   [:div.text-orange-500.text-4xl.lg:text-7xl.flex.justify-center "Welcome!"]
+   [:div.text-white.text-lg.lg:text-3xl.flex.text-center.justify-center "This site hosts some of the personal projects of Dustin Tracy."]
    [:div
     [:a {:class-name (str links/a "flex justify-center") :on-click #(re-frame/dispatch [::events/navigate :about])}
      "Learn more about him!"]]])
 
 (defn blog-list []
-  [:div.grid.grid-rows-subgrid.row-span-3.max-w-2xl
-   [:div.row-start-2
-    [blog-posts/list-item voting-judgement/info]]])
+  [:div.flex.justify-center.pt-4
+  [:div.grid.grid-cols-1.max-w-4xl.gap-2
+   [blog-posts/list-item voting-judgement/info]
+   [blog-posts/list-item voting-judgement/info]
+   [blog-posts/list-item voting-judgement/info]]])
 
 (defn home-panel []
 ;;   (let [name (re-frame/subscribe [::subs/name])]
-  [:div.bg-slate-900.h-screen
+  [:div.bg-slate-900.min-h-screen
    [jumbotron]
    [blog-list]])
     

@@ -11,9 +11,9 @@
         date (tf/unparse date-to-string (get info :date))
         figure (get info :figure)]
     [:div.grid.grid-cols-12.bg-gray-400.rounded-lg.shadow-lg
-     [:div.col-span-7
-      [:div.text-white (str "Posted: " date)]
-      [:div.text-white title]
-      [:div.text-white description]]
+     [:div.col-span-7.p-4
+      [:div.text-white.text-sm (str "Posted: " date)]
+      [:div.text-white.text-2xl.text-orange-300.pb-2.pt-2 title]
+      [:div.hidden.md:block.text-white description]]
      [:div.col-span-5
-      [:img.w-96.rounded-lg {:src figure}]]]))
+      [:img.w-96.rounded-r-lg {:src figure}]]]))
