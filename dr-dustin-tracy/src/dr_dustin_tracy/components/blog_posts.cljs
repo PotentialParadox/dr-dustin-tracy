@@ -22,20 +22,27 @@
       [:img.w-96.rounded-r-lg {:src figure}]]]))
 
 (defn blog-post-header [{:keys [title date description]}]
-  [:div.bg-gray-200.shadow-lg.h-fit.p-4.rounded-t-lg.pb-6
-   [:div.text-black-300.text-2xl.lg:text-4xl.pb-2 title]
-   [:div.text-black.text-left.pb-4 description]
-   [:div.text-black.text-sm.text-left (str "Posted: " (tf/unparse date-to-string date))]])
+  [:div
+   [:div.bg-gray-200.shadow-lg.h-fit.p-4.rounded-t-lg.pb-6
+    [:div.text-orange-500.text-2xl.lg:text-4xl.pb-2 title]
+    [:div.text-black.text-left.pb-4 description]
+    [:div.text-black.text-sm.text-left (str "Posted: " (tf/unparse date-to-string date))]]
+    [:hr {:class-name "h-0.5 bg-slate-400"}]
+   ])
+
 
 (defn blog-hr [] [:hr {:class-name "h-0.5 bg-black mt-2 mb-2"}])
 
-(defn blog-dislaimer [] [:div.bg-gray-200.p-4.text-sm.italic "The views expressed in this post are my own and do not reflect the views of any organization I am affiliated with."])
+(defn blog-dislaimer [] [:div.bg-gray-200.pb-4.pl-4.pr-4.text-sm.italic "The views expressed in this post are my own and do not reflect the views of any organization I am affiliated with."])
+
+(defn blog-paragraph [text] [:div.bg-gray-200.pl-4.pr-4.pb-2 text])
+
 
 (defn blog-key-takeaways [{:keys [takeaways]}]
   [:div.bg-gray-200.shadow-lg.h-fit.p-4
   [:div.text-black-300.text-lg.lg:text-2xl.pb-4 "Key Takeaways"]
   [:ul {:class-name "list-disc pl-4 space-y-2"}
    (for [takeaway takeaways]
-     [:li.text-black.border-b.border-slate-400.pb-2  takeaway])]])
+     [:li.text-black.border-b.italic.border-slate-400.pb-2  takeaway])]])
 
 
