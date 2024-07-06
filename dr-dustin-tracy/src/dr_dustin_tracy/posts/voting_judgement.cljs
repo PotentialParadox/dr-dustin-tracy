@@ -20,7 +20,7 @@
 (defn voting-judgement-panel []
   [:div.bg-slate-900.min-h-screen
    [:div.flex.justify-center.pt-4
-   [:div {:class-name "grid cols-1 max-w-4xl"}
+   [:div {:class-name "grid cols-1 max-w-6xl"}
     [blog-posts/blog-post-header info]
     [blog-posts/blog-key-takeaways key-takeaways]
     [blog-posts/blog-dislaimer]
