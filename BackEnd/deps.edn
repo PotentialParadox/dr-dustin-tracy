@@ -1,0 +1,5 @@
+{:deps {techascent/tech.ml.dataset {:mvn/version "7.030"}
+        scicloj/tablecloth {:mvn/version "7.021"}
+        io.github.nextjournal/clerk {:mvn/version "0.16.1016"}
+        aerial.hanami/aerial.hanami {:mvn/version "0.20.0"}
+        kixi/stats {:mvn/version "0.5.5"}}}
